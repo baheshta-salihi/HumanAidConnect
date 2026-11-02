@@ -1,0 +1,35 @@
+[
+  {
+    "id": "f43872fb-d15c-45c9-9079-feda875c2cae",
+    "name": "Food Support Program",
+    "location": "Kabul",
+    "target": "100 Families",
+    "budget": 15000,
+    "status": "Active",
+    "startDate": "2026-10-01",
+    "endDate": "2027-03-01",
+    "description": "Food assistance for vulnerable families"
+  },
+  {
+    "id": "d497060f-aef5-4c41-9a3d-d7214a697050",
+    "name": "Education Support",
+    "location": "Nangarhar",
+    "target": "60 Children",
+    "budget": 10000,
+    "status": "Active",
+    "startDate": "2026-10-10",
+    "endDate": "2027-04-10",
+    "description": "Educational support for children"
+  },
+  {
+    "id": "521bdc26-f331-4e6e-b828-bb4765a5fe20",
+    "name": "Health Assistance",
+    "location": "Herat",
+    "target": "80 Families",
+    "budget": 12000,
+    "status": "Planning",
+    "startDate": "2026-11-01",
+    "endDate": "2027-05-01",
+    "description": "Healthcare support program"
+  }
+]

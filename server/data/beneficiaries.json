@@ -1,0 +1,29 @@
+[
+  {
+    "id": "fffc9158-e549-4838-b5f1-298a91762f09",
+    "name": "Ahmad Rahimi",
+    "age": 35,
+    "gender": "Male",
+    "location": "Kabul",
+    "vulnerability": "Low Income",
+    "status": "Approved"
+  },
+  {
+    "id": "016e736c-b391-4d08-9715-39e8dca1dea4",
+    "name": "Maryam Ahmadi",
+    "age": 28,
+    "gender": "Female",
+    "location": "Kabul",
+    "vulnerability": "Single Mother",
+    "status": "Approved"
+  },
+  {
+    "id": "c797576f-ba9e-4fb2-8338-5a8e9ab2304f",
+    "name": "Fatima Noori",
+    "age": 42,
+    "gender": "Female",
+    "location": "Nangarhar",
+    "vulnerability": "Disability",
+    "status": "Pending"
+  }
+]

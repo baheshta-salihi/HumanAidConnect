@@ -1,0 +1,29 @@
+[
+  {
+    "id": "85617eef-741c-4d81-860e-347cff563775",
+    "location": "Kabul",
+    "items": "Food Packages",
+    "quantity": 100,
+    "beneficiaryName": "Family A-102",
+    "date": "2026-10-20",
+    "status": "Completed"
+  },
+  {
+    "id": "696de792-f02c-4b38-b299-1c9981fcafd1",
+    "location": "Nangarhar",
+    "items": "School Kits",
+    "quantity": 60,
+    "beneficiaryName": "Family B-205",
+    "date": "2026-10-22",
+    "status": "Completed"
+  },
+  {
+    "id": "0660c71a-2b0f-40af-bb17-b83ddc223b74",
+    "location": "Herat",
+    "items": "Medical Kits",
+    "quantity": 40,
+    "beneficiaryName": "Family C-311",
+    "date": "2026-10-25",
+    "status": "Pending"
+  }
+]

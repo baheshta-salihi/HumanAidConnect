@@ -1,0 +1,79 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+
+  --deep-teal: #174C45;
+  --terracotta: #D77B52;
+  --sand: #E8D8B9;
+  --warm-ivory: #F8F6F0;
+
+  --text: #293D38;
+  --muted: #7B8982;
+  --white: #FFFFFF;
+  --border: #EAE8DF;
+
+  color: var(--text);
+  background: var(--warm-ivory);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  background: var(--warm-ivory);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  border: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.rtl {
+  direction: rtl;
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+.ltr {
+  direction: ltr;
+}
