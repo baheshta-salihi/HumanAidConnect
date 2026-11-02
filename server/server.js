@@ -6,7 +6,7 @@ const path = require("path");
 const { randomUUID } = require("crypto");
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json({ limit: "1mb" }));
@@ -575,8 +575,8 @@ app.use((error, req, res, next) => {
 // START SERVER
 // ======================================
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(
-    `HumanAid Connect server running at http://localhost:${PORT}`
+    `HumanAid Connect server running on port ${PORT}`
   );
 });

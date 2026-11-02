@@ -1,13 +1,18 @@
+
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "HumanAid Connect Backend - Humanitarian Assistance Management System",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "humanitarian",
+    "assistance",
+    "management"
+  ],
+  "author": "HumanAid Connect",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
