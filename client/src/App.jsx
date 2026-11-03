@@ -206,6 +206,7 @@ function App() {
   const [language, setLanguage] = useState("en");
   const [activePage, setActivePage] = useState("dashboard");
   const [search, setSearch] = useState("");
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
 
   const [dashboardData, setDashboardData] = useState({
     totalBeneficiaries: 120,
@@ -822,14 +823,60 @@ function App() {
             <p>Every action brings hope to a community.</p>
           </div>
 
-          <div className="user-profile">
-            <div className="avatar">HA</div>
-            <div>
-              <strong>Admin User</strong>
-              <span>Program Manager</span>
-            </div>
-            <span className="profile-more">···</span>
-          </div>
+          <div
+  className="user-profile"
+  onClick={() => setShowProfileMenu(!showProfileMenu)}
+  style={{ cursor: "pointer", position: "relative" }}
+>
+  <div className="avatar">HA</div>
+
+  <div>
+    <strong>Admin User</strong>
+    <span>Program Manager</span>
+  </div>
+
+  <span className="profile-more">···</span>
+
+  {showProfileMenu && (
+    <div
+      style={{
+        position: "absolute",
+        bottom: "65px",
+        left: "0",
+        width: "220px",
+        background: "#fff",
+        border: "1px solid #ddd",
+        borderRadius: "10px",
+        padding: "15px",
+        boxShadow: "0 4px 15px rgba(0,0,0,0.12)",
+        zIndex: 1000,
+        color: "#333"
+      }}
+      onClick={(e) => e.stopPropagation()}
+    >
+      <strong>Admin User</strong>
+
+      <div style={{ marginTop: "12px", fontSize: "13px", lineHeight: "2" }}>
+       <div>Role: Program Manager</div>
+       <div>System: HumanAid Connect</div>
+       <div>Account Status: Active</div>
+       </div>
+
+      <button
+        onClick={() => setShowProfileMenu(false)}
+        style={{
+          width: "100%",
+          padding: "8px",
+          border: "none",
+          borderRadius: "6px",
+          cursor: "pointer"
+        }}
+      >
+        Close
+      </button>
+    </div>
+  )}
+</div>
         </div>
       </aside>
 
