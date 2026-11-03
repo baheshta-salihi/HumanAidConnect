@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from "react";
 import "./App.css";
 
-const API = "http://localhost:5000";
+const API = "https://humanaid-connect-api.onrender.com";
 
 const translations = {
   en: {
@@ -18,7 +18,7 @@ const translations = {
     people: "Registered Beneficiaries",
     pending: "Pending Requests",
     active: "Active Projects",
-    distributed: "Completed Distributions",
+    distributed: "Aid Distributions",
     recent: "Recent Assistance Requests",
     viewAll: "View all",
     name: "Beneficiary",
@@ -54,45 +54,12 @@ const translations = {
     activeStatus: "Active",
     planning: "Planning",
     addNew: "Add New",
-    sample: "Records from the system",
+    sample: "Sample records for demonstration",
     noResults: "No matching records found.",
     workspace: "WORKSPACE",
     purpose: "Assistance with dignity.",
     purposeText: "Connecting vulnerable communities with timely, transparent and accountable humanitarian support.",
-    loading: "Loading dashboard...",
-    age: "Age",
-    gender: "Gender",
-    vulnerability: "Vulnerability",
-    budget: "Budget",
-    startDate: "Start Date",
-    endDate: "End Date",
-    quantity: "Quantity",
-    beneficiaryName: "Beneficiary Name",
-    actions: "Actions",
-    edit: "Edit",
-    delete: "Delete",
-    save: "Save",
-    cancel: "Cancel",
-    descriptionField: "Description",
-    select: "Select",
-    male: "Male",
-    female: "Female",
-    inactive: "Inactive",
-    rejected: "Rejected",
-    distributedStatus: "Distributed",
-    reportTitle: "Humanitarian Assistance Report",
-    print: "Print Report",
-    totalRequests: "Total Requests",
-    totalProjects: "Total Projects",
-    totalDistributions: "Total Distributions",
-    noDescription: "No description",
-    saved: "Record saved successfully.",
-    deleted: "Record deleted successfully.",
-    confirmDelete: "Are you sure you want to delete this record?",
-    required: "Please complete all required fields.",
-    serverError: "Could not connect to the server. Please check the backend.",
-    formAdd: "Add New Record",
-    formEdit: "Edit Record"
+    loading: "Loading dashboard..."
   },
 
   dr: {
@@ -108,7 +75,7 @@ const translations = {
     people: "افراد ثبت‌شده",
     pending: "درخواست‌های در انتظار",
     active: "پروژه‌های فعال",
-    distributed: "توزیع‌های تکمیل‌شده",
+    distributed: "توزیع کمک‌ها",
     recent: "آخرین درخواست‌های کمک",
     viewAll: "مشاهده همه",
     name: "مستفیدشونده",
@@ -144,45 +111,12 @@ const translations = {
     activeStatus: "فعال",
     planning: "در حال برنامه‌ریزی",
     addNew: "افزودن جدید",
-    sample: "معلومات ثبت‌شده در سیستم",
+    sample: "اطلاعات نمونه برای نمایش",
     noResults: "موردی پیدا نشد.",
     workspace: "بخش کاری",
     purpose: "کمک با حفظ کرامت انسانی.",
     purposeText: "پیوند جوامع آسیب‌پذیر با کمک‌های به‌موقع، شفاف و پاسخگو.",
-    loading: "در حال دریافت معلومات داشبورد...",
-    age: "سن",
-    gender: "جنسیت",
-    vulnerability: "وضعیت آسیب‌پذیری",
-    budget: "بودجه",
-    startDate: "تاریخ آغاز",
-    endDate: "تاریخ ختم",
-    quantity: "تعداد",
-    beneficiaryName: "نام مستفیدشونده",
-    actions: "عملیات",
-    edit: "ویرایش",
-    delete: "حذف",
-    save: "ذخیره",
-    cancel: "لغو",
-    descriptionField: "توضیحات",
-    select: "انتخاب",
-    male: "مرد",
-    female: "زن",
-    inactive: "غیرفعال",
-    rejected: "ردشده",
-    distributedStatus: "توزیع‌شده",
-    reportTitle: "گزارش کمک‌های بشردوستانه",
-    print: "چاپ گزارش",
-    totalRequests: "مجموع درخواست‌ها",
-    totalProjects: "مجموع پروژه‌ها",
-    totalDistributions: "مجموع توزیع‌ها",
-    noDescription: "بدون توضیحات",
-    saved: "معلومات موفقانه ذخیره شد.",
-    deleted: "معلومات موفقانه حذف شد.",
-    confirmDelete: "آیا مطمئن هستید که این معلومات حذف شود؟",
-    required: "لطفاً خانه‌های ضروری را تکمیل کنید.",
-    serverError: "اتصال به سرور برقرار نشد. فعال بودن Backend را بررسی کنید.",
-    formAdd: "افزودن معلومات جدید",
-    formEdit: "ویرایش معلومات"
+    loading: "در حال دریافت معلومات داشبورد..."
   },
 
   ps: {
@@ -198,7 +132,7 @@ const translations = {
     people: "ثبت شوي کسان",
     pending: "د انتظار غوښتنې",
     active: "فعالې پروژې",
-    distributed: "بشپړ شوي وېشونه",
+    distributed: "وېشل شوې مرستې",
     recent: "د مرستې وروستۍ غوښتنې",
     viewAll: "ټول وګورئ",
     name: "ګټه اخیستونکی",
@@ -234,53 +168,20 @@ const translations = {
     activeStatus: "فعال",
     planning: "د پلان جوړولو په حال کې",
     addNew: "نوی اضافه کړئ",
-    sample: "په سیستم کې ثبت شوي معلومات",
+    sample: "د ښودلو لپاره نمونوي معلومات",
     noResults: "معلومات ونه موندل شول.",
     workspace: "کاري برخه",
     purpose: "د انساني کرامت په ساتلو مرسته.",
     purposeText: "زیانمنو ټولنو ته پر وخت، شفافې او حساب ورکوونکې مرستې رسول.",
-    loading: "د ډشبورډ معلومات ترلاسه کېږي...",
-    age: "عمر",
-    gender: "جنسیت",
-    vulnerability: "د زیان‌مننې حالت",
-    budget: "بودجه",
-    startDate: "د پیل نېټه",
-    endDate: "د پای نېټه",
-    quantity: "اندازه",
-    beneficiaryName: "د ګټه اخیستونکي نوم",
-    actions: "کړنې",
-    edit: "سمون",
-    delete: "ړنګول",
-    save: "ثبتول",
-    cancel: "لغوه کول",
-    descriptionField: "تشریحات",
-    select: "وټاکئ",
-    male: "نارینه",
-    female: "ښځینه",
-    inactive: "غیرفعال",
-    rejected: "رد شوی",
-    distributedStatus: "وېشل شوی",
-    reportTitle: "د بشري مرستو راپور",
-    print: "راپور چاپ کړئ",
-    totalRequests: "ټولې غوښتنې",
-    totalProjects: "ټولې پروژې",
-    totalDistributions: "ټول وېشونه",
-    noDescription: "تشریحات نشته",
-    saved: "معلومات په بریالیتوب ثبت شول.",
-    deleted: "معلومات په بریالیتوب ړنګ شول.",
-    confirmDelete: "ایا ډاډه یاست چې دا معلومات ړنګ کړئ؟",
-    required: "مهرباني وکړئ اړین ځایونه بشپړ کړئ.",
-    serverError: "له سرور سره اړیکه نشته. د Backend فعالوالی وګورئ.",
-    formAdd: "نوي معلومات اضافه کړئ",
-    formEdit: "د معلوماتو سمون"
+    loading: "د ډشبورډ معلومات ترلاسه کېږي..."
   }
 };
 
 const initialRequests = [
-  { id: 1, name: "Family A-102", type: "food", location: "Kabul", status: "Pending" },
-  { id: 2, name: "Family B-205", type: "education", location: "Nangarhar", status: "Approved" },
-  { id: 3, name: "Family C-311", type: "health", location: "Herat", status: "Under Review" },
-  { id: 4, name: "Family D-418", type: "food", location: "Kandahar", status: "Approved" }
+  { id: 1, name: "Family A-102", type: "food", location: "Kabul", status: "pendingStatus" },
+  { id: 2, name: "Family B-205", type: "education", location: "Nangarhar", status: "approved" },
+  { id: 3, name: "Family C-311", type: "health", location: "Herat", status: "review" },
+  { id: 4, name: "Family D-418", type: "food", location: "Kandahar", status: "approved" }
 ];
 
 const menu = [
@@ -291,61 +192,6 @@ const menu = [
   ["distributions", "hand-heart"],
   ["reports", "chart-no-axes-combined"]
 ];
-
-const resourceConfig = {
-  beneficiaries: {
-    fields: [
-      { name: "name", label: "name", required: true },
-      { name: "age", label: "age", type: "number", required: true },
-      { name: "gender", label: "gender", type: "select", options: ["Female", "Male"], required: true },
-      { name: "location", label: "location", required: true },
-      { name: "vulnerability", label: "vulnerability", required: true },
-      { name: "status", label: "status", type: "select", options: ["Pending", "Approved", "Under Review"], required: true }
-    ]
-  },
-
-  requests: {
-    fields: [
-      { name: "name", label: "name", required: true },
-      { name: "type", label: "type", required: true },
-      { name: "location", label: "location", required: true },
-      { name: "date", label: "date", type: "date", required: true },
-      { name: "status", label: "status", type: "select", options: ["Pending", "Approved", "Rejected", "Completed"], required: true },
-      { name: "description", label: "descriptionField", type: "textarea" }
-    ]
-  },
-
-  projects: {
-    fields: [
-      { name: "name", label: "name", required: true },
-      { name: "location", label: "location", required: true },
-      { name: "target", label: "target", type: "number", required: true },
-      { name: "budget", label: "budget", type: "number" },
-      { name: "status", label: "status", type: "select", options: ["Active", "Completed", "Inactive"], required: true },
-      { name: "startDate", label: "startDate", type: "date", required: true },
-      { name: "endDate", label: "endDate", type: "date", required: true },
-      { name: "description", label: "descriptionField", type: "textarea" }
-    ]
-  },
-
-  distributions: {
-    fields: [
-      { name: "location", label: "location", required: true },
-      { name: "items", label: "items", required: true },
-      { name: "quantity", label: "quantity", type: "number", required: true },
-      { name: "beneficiaryName", label: "beneficiaryName" },
-      { name: "date", label: "date", type: "date", required: true },
-      { name: "status", label: "status", type: "select", options: ["Pending", "Distributed", "Completed"], required: true }
-    ]
-  }
-};
-
-const emptyData = {
-  beneficiaries: [],
-  requests: [],
-  projects: [],
-  distributions: []
-};
 
 const emptyBeneficiary = {
   name: "",
@@ -362,326 +208,365 @@ function App() {
   const [search, setSearch] = useState("");
 
   const [dashboardData, setDashboardData] = useState({
-    totalBeneficiaries: 0,
-    totalRequests: 0,
-    pendingRequests: 0,
-    activeProjects: 0,
-    totalDistributions: 0,
-    completedDistributions: 0
+    totalBeneficiaries: 120,
+    totalRequests: 85,
+    activeProjects: 6,
+    totalDistributions: 250
   });
 
-  const [records, setRecords] = useState(emptyData);
   const [loading, setLoading] = useState(true);
   const [apiError, setApiError] = useState(false);
 
-  const [showForm, setShowForm] = useState(false);
-  const [editingRecord, setEditingRecord] = useState(null);
-  const [formData, setFormData] = useState({});
-  const [notice, setNotice] = useState("");
+  const [beneficiaries, setBeneficiaries] = useState([]);
+  const [beneficiaryLoading, setBeneficiaryLoading] = useState(false);
+  const [beneficiaryError, setBeneficiaryError] = useState("");
+
+  const [showBeneficiaryForm, setShowBeneficiaryForm] = useState(false);
+  const [editingBeneficiary, setEditingBeneficiary] = useState(null);
+  const [beneficiaryForm, setBeneficiaryForm] = useState(emptyBeneficiary);
 
   const t = translations[language];
   const isRTL = language !== "en";
 
-  const apiRequest = async (url, options = {}) => {
-    const response = await fetch(`${API}${url}`, {
-      ...options,
-      headers: {
-        "Content-Type": "application/json",
-        ...(options.headers || {})
-      }
-    });
-
-    const data = await response.json().catch(() => ({}));
-
-    if (!response.ok || data.success === false) {
-      throw new Error(data.message || "Request failed");
-    }
-
-    return data;
-  };
-
-  const loadResource = useCallback(async (resource) => {
-    const data = await apiRequest(`/api/${resource}`);
-
-    setRecords(previous => ({
-      ...previous,
-      [resource]: Array.isArray(data[resource]) ? data[resource] : []
-    }));
+  // Load dashboard data
+  useEffect(() => {
+    fetch(`${API}/api/dashboard`)
+      .then(response => {
+        if (!response.ok) throw new Error("Dashboard request failed");
+        return response.json();
+      })
+      .then(data => {
+        setDashboardData(data);
+        setApiError(false);
+      })
+      .catch(error => {
+        console.error("Dashboard API Error:", error);
+        setApiError(true);
+      })
+      .finally(() => setLoading(false));
   }, []);
 
-  const loadDashboard = useCallback(async () => {
-    const data = await apiRequest("/api/dashboard");
-    setDashboardData(previous => ({ ...previous, ...data }));
-  }, []);
-
-  const refreshAll = useCallback(async () => {
-    setLoading(true);
+  // Load beneficiaries from backend
+  const loadBeneficiaries = useCallback(async () => {
+    setBeneficiaryLoading(true);
+    setBeneficiaryError("");
 
     try {
-      await Promise.all([
-        loadDashboard(),
-        ...Object.keys(resourceConfig).map(resource => loadResource(resource))
-      ]);
+      const response = await fetch(
+        `${API}/api/beneficiaries?search=${encodeURIComponent(search)}`
+      );
 
-      setApiError(false);
+      if (!response.ok) {
+        throw new Error("Could not load beneficiaries");
+      }
+
+      const data = await response.json();
+      setBeneficiaries(data.beneficiaries || []);
     } catch (error) {
-      console.error("Loading error:", error);
-      setApiError(true);
-      setNotice(translations[language].serverError);
+      console.error("Beneficiary API Error:", error);
+      setBeneficiaryError(
+        "Could not connect to the beneficiaries API. Please check the backend server."
+      );
     } finally {
-      setLoading(false);
+      setBeneficiaryLoading(false);
     }
-  }, [loadDashboard, loadResource, language]);
+  }, [search]);
 
   useEffect(() => {
-    refreshAll();
-  }, [refreshAll]);
-
-  useEffect(() => {
-    if (!notice) return;
-
-    const timer = setTimeout(() => setNotice(""), 4000);
-    return () => clearTimeout(timer);
-  }, [notice]);
-
-  const openAddForm = () => {
-    setEditingRecord(null);
-
     if (activePage === "beneficiaries") {
-      setFormData({ ...emptyBeneficiary });
-    } else {
-      setFormData({});
+      loadBeneficiaries();
     }
+  }, [activePage, loadBeneficiaries]);
 
-    setShowForm(true);
-  };
-
-  const openEditForm = (record) => {
-    setEditingRecord(record);
-    setFormData({ ...record });
-    setShowForm(true);
-  };
-
-  const closeForm = () => {
-    setShowForm(false);
-    setEditingRecord(null);
-    setFormData({});
-  };
-
-  const handleFieldChange = (field, value) => {
-    setFormData(previous => ({
-      ...previous,
-      [field]: value
-    }));
-  };
-
-  const handleSave = async (event) => {
+  // Add or update beneficiary
+  const handleBeneficiarySubmit = async (event) => {
     event.preventDefault();
 
-    const config = resourceConfig[activePage];
-    if (!config) return;
+    const payload = {
+      ...beneficiaryForm,
+      age: Number(beneficiaryForm.age)
+    };
 
-    const missing = config.fields.some(field =>
-      field.required && !String(formData[field.name] ?? "").trim()
-    );
-
-    if (missing) {
-      setNotice(t.required);
-      return;
-    }
-
-    const payload = { ...formData };
-
-    delete payload.id;
-    delete payload.createdAt;
-    delete payload.updatedAt;
-
-    if (payload.age !== undefined) payload.age = Number(payload.age);
-    if (payload.target !== undefined) payload.target = Number(payload.target);
-    if (payload.budget !== undefined && payload.budget !== "") {
-      payload.budget = Number(payload.budget);
-    }
-    if (payload.quantity !== undefined) {
-      payload.quantity = Number(payload.quantity);
-    }
+    const url = editingBeneficiary
+      ? `${API}/api/beneficiaries/${editingBeneficiary.id}`
+      : `${API}/api/beneficiaries`;
 
     try {
-      const isEditing = Boolean(editingRecord?.id);
-      const endpoint = isEditing
-        ? `/api/${activePage}/${editingRecord.id}`
-        : `/api/${activePage}`;
-
-      const result = await apiRequest(endpoint, {
-        method: isEditing ? "PUT" : "POST",
+      const response = await fetch(url, {
+        method: editingBeneficiary ? "PUT" : "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       });
 
-      await Promise.all([
-        loadResource(activePage),
-        loadDashboard()
-      ]);
+      const data = await response.json();
 
-      closeForm();
-      setNotice(result.message || t.saved);
+      if (!response.ok) {
+        throw new Error(data.message || "Operation failed");
+      }
+
+      setShowBeneficiaryForm(false);
+      setEditingBeneficiary(null);
+      setBeneficiaryForm(emptyBeneficiary);
+
+      await loadBeneficiaries();
+      window.alert(data.message);
     } catch (error) {
-      console.error(error);
-      setNotice(error.message || t.serverError);
+      window.alert(error.message);
     }
   };
 
-  const handleDelete = async (id) => {
-    if (!window.confirm(t.confirmDelete)) return;
+  // Open edit form
+  const handleEditBeneficiary = (person) => {
+    setEditingBeneficiary(person);
+    setBeneficiaryForm({
+      name: person.name,
+      age: String(person.age),
+      gender: person.gender,
+      location: person.location,
+      vulnerability: person.vulnerability,
+      status: person.status
+    });
+    setShowBeneficiaryForm(true);
+  };
+
+  // Delete beneficiary
+  const handleDeleteBeneficiary = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this beneficiary?")) {
+      return;
+    }
 
     try {
-      const result = await apiRequest(`/api/${activePage}/${id}`, {
+      const response = await fetch(`${API}/api/beneficiaries/${id}`, {
         method: "DELETE"
       });
 
-      await Promise.all([
-        loadResource(activePage),
-        loadDashboard()
-      ]);
+      const data = await response.json();
 
-      setNotice(result.message || t.deleted);
+      if (!response.ok) {
+        throw new Error(data.message || "Delete failed");
+      }
+
+      await loadBeneficiaries();
+      window.alert(data.message);
     } catch (error) {
-      console.error(error);
-      setNotice(error.message || t.serverError);
+      window.alert(error.message);
     }
-  };
-
-  const changePage = (page) => {
-    setActivePage(page);
-    setSearch("");
-    setShowForm(false);
-    setEditingRecord(null);
-  };
-
-  const getStatusClass = (value) => {
-    const status = String(value || "").toLowerCase();
-
-    if (status.includes("pending")) return "pending";
-    if (status.includes("review")) return "review";
-    if (status.includes("reject")) return "pending";
-    if (status.includes("active") || status.includes("approved")) return "approved";
-    if (status.includes("complete") || status.includes("distribut")) return "approved";
-
-    return "review";
-  };
-
-  const getStatusLabel = (value) => {
-    const status = String(value || "");
-    const key = status.toLowerCase();
-
-    if (key === "pending") return t.pendingStatus;
-    if (key === "approved") return t.approved;
-    if (key === "under review") return t.review;
-    if (key === "active") return t.activeStatus;
-    if (key === "inactive") return t.inactive;
-    if (key === "completed") return t.completed;
-    if (key === "distributed") return t.distributedStatus;
-    if (key === "rejected") return t.rejected;
-
-    return status;
   };
 
   const stats = [
     {
       title: t.people,
-      value: Number(dashboardData.totalBeneficiaries ?? records.beneficiaries.length).toLocaleString(),
-      change: t.today,
+      value: dashboardData.totalBeneficiaries.toLocaleString(),
+      change: "+12.8%",
       icon: "♙",
       color: "teal"
     },
     {
       title: t.pending,
-      value: Number(
-        dashboardData.pendingRequests ??
-        records.requests.filter(item => item.status === "Pending").length
-      ).toLocaleString(),
-      change: `${dashboardData.totalRequests ?? records.requests.length} ${t.total}`,
+      value: dashboardData.totalRequests.toLocaleString(),
+      change: "24 new",
       icon: "◷",
       color: "orange"
     },
     {
       title: t.active,
-      value: Number(
-        dashboardData.activeProjects ??
-        records.projects.filter(item => item.status === "Active").length
-      ).toLocaleString(),
-      change: `${records.projects.length} ${t.total}`,
+      value: dashboardData.activeProjects.toLocaleString(),
+      change: "Across 5 provinces",
       icon: "▤",
       color: "sand"
     },
     {
       title: t.distributed,
-      value: Number(
-        dashboardData.completedDistributions ??
-        records.distributions.filter(item =>
-          ["Completed", "Distributed"].includes(item.status)
-        ).length
-      ).toLocaleString(),
-      change: `${dashboardData.totalDistributions ?? records.distributions.length} ${t.total}`,
+      value: dashboardData.totalDistributions.toLocaleString(),
+      change: "This month",
       icon: "♡",
       color: "rose"
     }
   ];
 
-  const recentRequests = records.requests.length
-    ? [...records.requests]
-        .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")))
-        .slice(0, 5)
-    : initialRequests;
+  const requests = initialRequests.filter(item =>
+    `${item.name} ${item.location} ${item.type} ${item.status}`
+      .toLowerCase()
+      .includes(search.toLowerCase())
+  );
 
-  const filterRecords = (items) => {
-    const term = search.toLowerCase().trim();
-    if (!term) return items;
+  const moduleData = {
+    beneficiaries: {
+      title: t.beneficiaries,
+      columns: [t.id, t.name, t.location, t.assistance, t.status],
+      rows: []
+    },
 
-    return items.filter(item =>
-      Object.values(item).some(value =>
-        String(value ?? "").toLowerCase().includes(term)
-      )
-    );
+    requests: {
+      title: t.requests,
+      columns: [t.id, t.name, t.type, t.location, t.status],
+      rows: [
+        ["R-001", "Family A-102", t.food, "Kabul", t.pendingStatus],
+        ["R-002", "Family B-205", t.education, "Nangarhar", t.approved],
+        ["R-003", "Family C-311", t.health, "Herat", t.review],
+        ["R-004", "Family D-418", t.food, "Kandahar", t.approved]
+      ]
+    },
+
+    projects: {
+      title: t.projects,
+      columns: [t.id, t.name, t.location, t.target, t.status],
+      rows: [
+        ["P-001", "Food Support", "Kabul", "100 Families", t.activeStatus],
+        ["P-002", "Education Support", "Nangarhar", "60 Children", t.activeStatus],
+        ["P-003", "Health Assistance", "Herat", "80 Families", t.planning]
+      ]
+    },
+
+    distributions: {
+      title: t.distributions,
+      columns: [t.id, t.location, t.items, t.date],
+      rows: [
+        ["D-001", "Kabul", "Food Packages", "2026-10-20"],
+        ["D-002", "Nangarhar", "School Kits", "2026-10-22"],
+        ["D-003", "Herat", "Medical Kits", "2026-10-25"],
+        ["D-004", "Kandahar", "Food Packages", "2026-10-28"]
+      ]
+    },
+
+    reports: {
+      title: t.reports,
+      columns: [t.report, t.period, t.preparedBy, t.status],
+      rows: [
+        ["Monthly Activity", "October 2026", "Admin", t.completed],
+        ["Distribution Summary", "October 2026", "Program Team", t.completed],
+        ["Project Progress", "2026", "Admin", t.inProgress]
+      ]
+    }
+  };
+
+  const currentModule = moduleData[activePage];
+
+  const filteredRows = currentModule?.rows.filter(row =>
+    row.join(" ").toLowerCase().includes(search.toLowerCase())
+  ) || [];
+
+  const getStatusClass = (value) => {
+    const status = String(value).toLowerCase();
+
+    if (
+      status.includes("pending") ||
+      status.includes("انتظار") ||
+      status.includes("کې انتظار")
+    ) return "pending";
+
+    if (
+      status.includes("review") ||
+      status.includes("بررسی") ||
+      status.includes("ارزونې")
+    ) return "review";
+
+    if (
+      status.includes("active") ||
+      status.includes("approved") ||
+      status.includes("تأیید") ||
+      status.includes("فعال")
+    ) return "approved";
+
+    return "approved";
   };
 
   const renderBeneficiaryForm = () => (
     <div className="module-card" style={{ marginBottom: 24 }}>
-      <h2>{editingRecord ? t.formEdit : t.add}</h2>
+      <h2>
+        {editingBeneficiary ? "Edit Beneficiary" : "Register New Beneficiary"}
+      </h2>
 
-      <form onSubmit={handleSave}>
+      <form onSubmit={handleBeneficiarySubmit}>
         <div style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
           gap: 16,
           marginTop: 20
         }}>
-          {resourceConfig.beneficiaries.fields.map(field => (
-            <label key={field.name}>
-              {t[field.label] || field.label}
-              {field.required ? " *" : ""}
+          <label>
+            Full Name *
+            <input
+              required
+              value={beneficiaryForm.name}
+              onChange={event => setBeneficiaryForm({
+                ...beneficiaryForm,
+                name: event.target.value
+              })}
+              placeholder="Enter full name"
+            />
+          </label>
 
-              {field.type === "select" ? (
-                <select
-                  value={formData[field.name] ?? ""}
-                  required={field.required}
-                  onChange={event => handleFieldChange(field.name, event.target.value)}
-                >
-                  {field.options.map(option => (
-                    <option key={option} value={option}>
-                      {t[option.toLowerCase()] || option}
-                    </option>
-                  ))}
-                </select>
-              ) : (
-                <input
-                  type={field.type || "text"}
-                  min={field.type === "number" ? "0" : undefined}
-                  required={field.required}
-                  value={formData[field.name] ?? ""}
-                  onChange={event => handleFieldChange(field.name, event.target.value)}
-                />
-              )}
-            </label>
-          ))}
+          <label>
+            Age *
+            <input
+              required
+              type="number"
+              min="0"
+              value={beneficiaryForm.age}
+              onChange={event => setBeneficiaryForm({
+                ...beneficiaryForm,
+                age: event.target.value
+              })}
+              placeholder="Enter age"
+            />
+          </label>
+
+          <label>
+            Gender *
+            <select
+              value={beneficiaryForm.gender}
+              onChange={event => setBeneficiaryForm({
+                ...beneficiaryForm,
+                gender: event.target.value
+              })}
+            >
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+
+          <label>
+            Location *
+            <input
+              required
+              value={beneficiaryForm.location}
+              onChange={event => setBeneficiaryForm({
+                ...beneficiaryForm,
+                location: event.target.value
+              })}
+              placeholder="Enter city or province"
+            />
+          </label>
+
+          <label>
+            Vulnerability *
+            <input
+              required
+              value={beneficiaryForm.vulnerability}
+              onChange={event => setBeneficiaryForm({
+                ...beneficiaryForm,
+                vulnerability: event.target.value
+              })}
+              placeholder="e.g. Low Income"
+            />
+          </label>
+
+          <label>
+            Status *
+            <select
+              value={beneficiaryForm.status}
+              onChange={event => setBeneficiaryForm({
+                ...beneficiaryForm,
+                status: event.target.value
+              })}
+            >
+              <option value="Pending">Pending</option>
+              <option value="Approved">Approved</option>
+              <option value="Under Review">Under Review</option>
+            </select>
+          </label>
         </div>
 
         <div style={{
@@ -690,368 +575,200 @@ function App() {
           marginTop: 22,
           flexWrap: "wrap"
         }}>
-          <button className="btn-primary" type="submit">{t.save}</button>
-          <button className="btn-secondary" type="button" onClick={closeForm}>
-            {t.cancel}
+          <button className="btn-primary" type="submit">
+            {editingBeneficiary ? "Save Changes" : "Register Beneficiary"}
+          </button>
+
+          <button
+            className="btn-secondary"
+            type="button"
+            onClick={() => {
+              setShowBeneficiaryForm(false);
+              setEditingBeneficiary(null);
+              setBeneficiaryForm(emptyBeneficiary);
+            }}
+          >
+            Cancel
           </button>
         </div>
       </form>
     </div>
   );
 
-  const renderGenericForm = () => {
-    const config = resourceConfig[activePage];
-    if (!config) return null;
-
-    return (
-      <div className="module-card" style={{ marginBottom: 24 }}>
-        <h2>{editingRecord ? t.formEdit : t.formAdd}</h2>
-
-        <form onSubmit={handleSave}>
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: 16,
-            marginTop: 20
-          }}>
-            {config.fields.map(field => (
-              <label
-                key={field.name}
-                style={field.type === "textarea" ? { gridColumn: "1 / -1" } : {}}
-              >
-                {t[field.label] || field.label}
-                {field.required ? " *" : ""}
-
-                {field.type === "select" ? (
-                  <select
-                    required={field.required}
-                    value={formData[field.name] ?? ""}
-                    onChange={event => handleFieldChange(field.name, event.target.value)}
-                  >
-                    <option value="">{t.select}</option>
-                    {field.options.map(option => (
-                      <option key={option} value={option}>
-                        {t[option.toLowerCase()] || option}
-                      </option>
-                    ))}
-                  </select>
-                ) : field.type === "textarea" ? (
-                  <textarea
-                    rows="3"
-                    value={formData[field.name] ?? ""}
-                    onChange={event => handleFieldChange(field.name, event.target.value)}
-                  />
-                ) : (
-                  <input
-                    type={field.type || "text"}
-                    min={field.type === "number" ? "0" : undefined}
-                    required={field.required}
-                    value={formData[field.name] ?? ""}
-                    onChange={event => handleFieldChange(field.name, event.target.value)}
-                  />
-                )}
-              </label>
-            ))}
-          </div>
-
-          <div style={{
-            display: "flex",
-            gap: 12,
-            marginTop: 22,
-            flexWrap: "wrap"
-          }}>
-            <button className="btn-primary" type="submit">{t.save}</button>
-            <button className="btn-secondary" type="button" onClick={closeForm}>
-              {t.cancel}
-            </button>
-          </div>
-        </form>
-      </div>
-    );
-  };
-
-  const renderBeneficiariesTable = () => {
-    const people = filterRecords(records.beneficiaries);
-
-    return (
-      <div className="module-card">
-        <div className="section-heading">
-          <div>
-            <h2>{t.beneficiaries}</h2>
-            <p>{t.sample}</p>
-          </div>
-          <span className="period-label">{people.length} {t.records}</span>
+  const renderModulePage = () => (
+    <section className="module-page">
+      <div className="module-header">
+        <div>
+          <span className="eyebrow">HUMANAID CONNECT / MANAGEMENT</span>
+          <h1>{currentModule.title}</h1>
+          <p>{t.description}</p>
         </div>
 
-        {loading ? (
-          <p>{t.loading}</p>
-        ) : (
-          <div className="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>{t.id}</th>
-                  <th>{t.name}</th>
-                  <th>{t.age}</th>
-                  <th>{t.gender}</th>
-                  <th>{t.location}</th>
-                  <th>{t.vulnerability}</th>
-                  <th>{t.status}</th>
-                  <th>{t.actions}</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                {people.map(person => (
-                  <tr key={person.id}>
-                    <td>{String(person.id).slice(0, 8)}</td>
-                    <td><strong>{person.name}</strong></td>
-                    <td>{person.age}</td>
-                    <td>{t[String(person.gender).toLowerCase()] || person.gender}</td>
-                    <td>{person.location}</td>
-                    <td>{person.vulnerability}</td>
-                    <td>
-                      <span className={`status ${getStatusClass(person.status)}`}>
-                        {getStatusLabel(person.status)}
-                      </span>
-                    </td>
-                    <td>
-                      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                        <button
-                          className="btn-secondary"
-                          type="button"
-                          onClick={() => openEditForm(person)}
-                        >
-                          {t.edit}
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => handleDelete(person.id)}
-                          style={{
-                            border: "1px solid #d77b52",
-                            color: "#b84f32",
-                            background: "#fff",
-                            borderRadius: 8,
-                            padding: "8px 12px",
-                            cursor: "pointer"
-                          }}
-                        >
-                          {t.delete}
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-
-                {people.length === 0 && (
-                  <tr>
-                    <td colSpan="8">{t.noResults}</td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-        )}
+        <button
+          className="btn-primary"
+          onClick={() => {
+            if (activePage === "beneficiaries") {
+              setEditingBeneficiary(null);
+              setBeneficiaryForm(emptyBeneficiary);
+              setShowBeneficiaryForm(true);
+            } else {
+              window.alert("This function will be connected in the next development stage.");
+            }
+          }}
+        >
+          + {activePage === "beneficiaries" ? t.add : t.addNew}
+        </button>
       </div>
-    );
-  };
 
-  const renderResourceTable = () => {
-    const data = filterRecords(records[activePage] || []);
+      {activePage === "beneficiaries" ? (
+        <>
+          {showBeneficiaryForm && renderBeneficiaryForm()}
 
-    const columns = {
-      requests: [
-        ["name", t.name],
-        ["type", t.type],
-        ["location", t.location],
-        ["date", t.date],
-        ["status", t.status]
-      ],
-      projects: [
-        ["name", t.name],
-        ["location", t.location],
-        ["target", t.target],
-        ["budget", t.budget],
-        ["status", t.status],
-        ["startDate", t.startDate],
-        ["endDate", t.endDate]
-      ],
-      distributions: [
-        ["location", t.location],
-        ["items", t.items],
-        ["quantity", t.quantity],
-        ["beneficiaryName", t.beneficiaryName],
-        ["date", t.date],
-        ["status", t.status]
-      ]
-    };
+          <div className="module-card">
+            <div className="section-heading">
+              <div>
+                <h2>{t.beneficiaries}</h2>
+                <p>Live records from the backend API</p>
+              </div>
 
-    const fields = columns[activePage] || [];
+              <span className="period-label">
+                {beneficiaries.length} {t.records}
+              </span>
+            </div>
 
-    return (
-      <div className="module-card">
-        <div className="section-heading">
-          <div>
-            <h2>{t[activePage]}</h2>
-            <p>{t.sample}</p>
-          </div>
-          <span className="period-label">{data.length} {t.records}</span>
-        </div>
+            {beneficiaryLoading && <p>Loading beneficiaries...</p>}
 
-        {loading ? (
-          <p>{t.loading}</p>
-        ) : (
-          <div className="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>{t.id}</th>
-                  {fields.map(([key, label]) => <th key={key}>{label}</th>)}
-                  <th>{t.actions}</th>
-                </tr>
-              </thead>
+            {beneficiaryError && (
+              <p style={{ color: "red" }}>{beneficiaryError}</p>
+            )}
 
-              <tbody>
-                {data.map(record => (
-                  <tr key={record.id}>
-                    <td>{String(record.id).slice(0, 8)}</td>
+            {!beneficiaryLoading && !beneficiaryError && (
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Age</th>
+                      <th>Gender</th>
+                      <th>Location</th>
+                      <th>Vulnerability</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
 
-                    {fields.map(([key]) => (
-                      <td key={key}>
-                        {key === "status" ? (
-                          <span className={`status ${getStatusClass(record[key])}`}>
-                            {getStatusLabel(record[key])}
+                  <tbody>
+                    {beneficiaries.map(person => (
+                      <tr key={person.id}>
+                        <td>{person.id.slice(0, 8)}</td>
+                        <td><strong>{person.name}</strong></td>
+                        <td>{person.age}</td>
+                        <td>{person.gender}</td>
+                        <td>{person.location}</td>
+                        <td>{person.vulnerability}</td>
+                        <td>
+                          <span className={`status ${getStatusClass(person.status)}`}>
+                            {person.status}
                           </span>
-                        ) : (
-                          record[key] ?? "—"
-                        )}
+                        </td>
+                        <td>
+                          <div style={{
+                            display: "flex",
+                            gap: 8,
+                            flexWrap: "wrap"
+                          }}>
+                            <button
+                              className="btn-secondary"
+                              type="button"
+                              onClick={() => handleEditBeneficiary(person)}
+                            >
+                              Edit
+                            </button>
+
+                            <button
+                              type="button"
+                              onClick={() => handleDeleteBeneficiary(person.id)}
+                              style={{
+                                border: "1px solid #d77b52",
+                                color: "#b84f32",
+                                background: "#fff",
+                                borderRadius: 8,
+                                padding: "8px 12px",
+                                cursor: "pointer"
+                              }}
+                            >
+                              Delete
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+
+                    {beneficiaries.length === 0 && (
+                      <tr>
+                        <td colSpan="8">{t.noResults}</td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        </>
+      ) : (
+        <div className="module-card">
+          <div className="section-heading">
+            <div>
+              <h2>{currentModule.title}</h2>
+              <p>{t.sample}</p>
+            </div>
+
+            <span className="period-label">
+              {filteredRows.length} {t.records}
+            </span>
+          </div>
+
+          <div className="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  {currentModule.columns.map((column, index) => (
+                    <th key={index}>{column}</th>
+                  ))}
+                </tr>
+              </thead>
+
+              <tbody>
+                {filteredRows.map((row, rowIndex) => (
+                  <tr key={rowIndex}>
+                    {row.map((cell, cellIndex) => (
+                      <td key={cellIndex}>
+                        {cellIndex === row.length - 1 &&
+                         activePage !== "distributions" ? (
+                          <span className={`status ${getStatusClass(cell)}`}>
+                            {cell}
+                          </span>
+                        ) : cell}
                       </td>
                     ))}
-
-                    <td>
-                      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                        <button
-                          className="btn-secondary"
-                          type="button"
-                          onClick={() => openEditForm(record)}
-                        >
-                          {t.edit}
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => handleDelete(record.id)}
-                          style={{
-                            border: "1px solid #d77b52",
-                            color: "#b84f32",
-                            background: "#fff",
-                            borderRadius: 8,
-                            padding: "8px 12px",
-                            cursor: "pointer"
-                          }}
-                        >
-                          {t.delete}
-                        </button>
-                      </div>
-                    </td>
                   </tr>
                 ))}
 
-                {data.length === 0 && (
+                {filteredRows.length === 0 && (
                   <tr>
-                    <td colSpan={fields.length + 2}>{t.noResults}</td>
+                    <td colSpan={currentModule.columns.length}>
+                      {t.noResults}
+                    </td>
                   </tr>
                 )}
               </tbody>
             </table>
           </div>
-        )}
-      </div>
-    );
-  };
-
-  const renderReports = () => {
-    const reportStats = [
-      [t.people, records.beneficiaries.length],
-      [t.totalRequests, records.requests.length],
-      [t.totalProjects, records.projects.length],
-      [t.totalDistributions, records.distributions.length],
-      [t.pending, records.requests.filter(item => item.status === "Pending").length],
-      [t.active, records.projects.filter(item => item.status === "Active").length]
-    ];
-
-    return (
-      <section className="module-page">
-        <div className="module-header">
-          <div>
-            <span className="eyebrow">HUMANAID CONNECT / REPORTS</span>
-            <h1>{t.reportTitle}</h1>
-            <p>{t.description}</p>
-          </div>
-
-          <button className="btn-primary" onClick={() => window.print()}>
-            {t.print}
-          </button>
         </div>
-
-        <div className="stats-grid">
-          {reportStats.map(([label, value]) => (
-            <article className="stat-card" key={label}>
-              <p>{label}</p>
-              <h2>{value}</h2>
-            </article>
-          ))}
-        </div>
-
-        <div className="module-card">
-          <h2>{t.overview}</h2>
-          <p>{t.people}: {records.beneficiaries.length}</p>
-          <p>{t.totalRequests}: {records.requests.length}</p>
-          <p>{t.totalProjects}: {records.projects.length}</p>
-          <p>{t.totalDistributions}: {records.distributions.length}</p>
-          <p>{t.pending}: {records.requests.filter(item => item.status === "Pending").length}</p>
-          <p>{t.active}: {records.projects.filter(item => item.status === "Active").length}</p>
-        </div>
-      </section>
-    );
-  };
-
-  const renderModulePage = () => {
-    const isBeneficiaries = activePage === "beneficiaries";
-
-    return (
-      <section className="module-page">
-        <div className="module-header">
-          <div>
-            <span className="eyebrow">HUMANAID CONNECT / MANAGEMENT</span>
-            <h1>{t[activePage]}</h1>
-            <p>{t.description}</p>
-          </div>
-
-          <button className="btn-primary" onClick={openAddForm}>
-            + {isBeneficiaries ? t.add : t.addNew}
-          </button>
-        </div>
-
-        {showForm && (
-          isBeneficiaries ? renderBeneficiaryForm() : renderGenericForm()
-        )}
-
-        <div className="toolbar" style={{ marginBottom: 18 }}>
-          <input
-            className="search-input"
-            type="search"
-            placeholder={t.search}
-            value={search}
-            onChange={event => setSearch(event.target.value)}
-          />
-        </div>
-
-        {isBeneficiaries
-          ? renderBeneficiariesTable()
-          : renderResourceTable()}
-      </section>
-    );
-  };
+      )}
+    </section>
+  );
 
   return (
     <div
@@ -1074,7 +791,12 @@ function App() {
             <button
               key={key}
               className={`nav-item ${activePage === key ? "selected" : ""}`}
-              onClick={() => changePage(key)}
+              onClick={() => {
+                setActivePage(key);
+                setSearch("");
+                setShowBeneficiaryForm(false);
+                setEditingBeneficiary(null);
+              }}
             >
               <span className="nav-icon">
                 {icon === "layout-dashboard" ? "▦" :
@@ -1087,9 +809,7 @@ function App() {
               {t[key]}
 
               {key === "requests" && (
-                <span className="nav-count">
-                  {records.requests.filter(item => item.status === "Pending").length}
-                </span>
+                <span className="nav-count">8</span>
               )}
             </button>
           ))}
@@ -1141,21 +861,11 @@ function App() {
               <option value="ps">PS | پښتو</option>
             </select>
 
-            <button className="notification" type="button">♧</button>
+            <button className="notification">♧</button>
           </div>
         </header>
 
         <section className="page-content">
-          {notice && (
-            <div
-              className="notice-message"
-              role="status"
-              style={{ marginBottom: 16 }}
-            >
-              {notice}
-            </div>
-          )}
-
           {activePage === "dashboard" ? (
             <>
               <div className="welcome-row">
@@ -1170,14 +880,14 @@ function App() {
                 <div className="welcome-actions">
                   <button
                     className="btn-secondary"
-                    onClick={() => changePage("projects")}
+                    onClick={() => setActivePage("projects")}
                   >
                     + {t.newProject}
                   </button>
 
                   <button
                     className="btn-primary"
-                    onClick={() => changePage("requests")}
+                    onClick={() => setActivePage("requests")}
                   >
                     + {t.newRequest}
                   </button>
@@ -1203,8 +913,8 @@ function App() {
                   <h2>Impact at a glance</h2>
                   <p>{loading ? t.loading : t.today}</p>
                   {apiError && (
-                    <small style={{ color: "#b84f32" }}>
-                      {t.serverError}
+                    <small>
+                      Showing sample figures because the server could not be reached.
                     </small>
                   )}
                 </div>
@@ -1237,7 +947,10 @@ function App() {
 
                     <button
                       className="text-button"
-                      onClick={() => changePage("requests")}
+                      onClick={() => {
+                        setActivePage("requests");
+                        setSearch("");
+                      }}
                     >
                       {t.viewAll} →
                     </button>
@@ -1255,22 +968,20 @@ function App() {
                       </thead>
 
                       <tbody>
-                        {recentRequests.map(item => (
+                        {requests.map(item => (
                           <tr key={item.id}>
                             <td><strong>{item.name}</strong></td>
-                            <td>
-                              {t[String(item.type || "").toLowerCase()] || item.type}
-                            </td>
+                            <td>{t[item.type]}</td>
                             <td>{item.location}</td>
                             <td>
-                              <span className={`status ${getStatusClass(item.status)}`}>
-                                {getStatusLabel(item.status)}
+                              <span className={`status ${item.status}`}>
+                                {t[item.status]}
                               </span>
                             </td>
                           </tr>
                         ))}
 
-                        {recentRequests.length === 0 && (
+                        {requests.length === 0 && (
                           <tr>
                             <td colSpan="4">{t.noResults}</td>
                           </tr>
@@ -1293,8 +1004,6 @@ function App() {
                 </section>
               </div>
             </>
-          ) : activePage === "reports" ? (
-            renderReports()
           ) : (
             renderModulePage()
           )}
